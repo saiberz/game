@@ -1,0 +1,49 @@
+/*div {
+    height:100px;
+    width:100px;
+    border-radius:5px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Verdana, Arial, Sans-Serif;
+    margin-right:5px;
+}
+
+#ready {
+    background-color:#008800;
+    color:#FFFFFF;
+}
+
+#notready {
+    background-color:#FF0000;
+    color:#FFFFFF;
+}*/
+
+#cuestionario{  
+    position: absolute;
+    top:100px;
+    left: 300px;
+    width:200px;
+    border-radius:5px;
+    background-color:#95aa80;
+    display: none;
+  
+}
+
+body {
+  background-image:url("images/backg.jpg");
+  background-size: auto
+}
+
+
+
+#personaje{
+ position: absolute;
+ top:50px;
+ width: 50px;  
+}
+#esferas {
+/*  position: absolute;*/
+  width:40px;
+  
+}
