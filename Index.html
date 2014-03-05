@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <span><img  onmouseover="inicio()" id="personaje" src="images/pers.jpg" alt=""> </span>
+  
+  <div>
+    <img src="images/esfera.jpg" alt="" name="esferas" id="esferas">
+    <img src="images/esfera.jpg" alt="" name="esferas" id="esferas">
+    <img src="images/esfera.jpg" alt="" name="esferas" id="esferas">
+    <img src="images/esfera.jpg" alt="" name="esferas" id="esferas">
+    <img src="images/esfera.jpg" alt="" name="esferas" id="esferas">
+  </div>
+  
+  <form id="cuestionario">
+    <span id="enunciado"></span>
+    <br>
+    <input type="radio" name="pregunta" checked> 
+    <span name="demo"></span>
+    <input type="radio" name="pregunta">
+    <span name="demo"></span>
+    <input type="radio" name="pregunta">
+    <span name="demo"></span>    
+    <br>        
+  <!--   <input type="button" onclick="myf()" value="siguiente"> -->
+    <input type="button" onclick="validar()" value="submit">    
+  </form>
+  
+</body>
+</html>
