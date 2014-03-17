@@ -1,3 +1,4 @@
+
 var x=0;  
 var gogo=1;
 var preguntas = [
@@ -105,18 +106,16 @@ function verificar(){
     
 function myf(){        
   document.getElementById("cuestionario").style.display="block";  
-  if(x>=3){
-    x=0;
-    return ; 
-  }
   enun=document.getElementById("enunciado");
   myradio=document.getElementsByName("pregunta");      
   alt=document.getElementsByName("demo");  
-  myrpta=preguntas[x]["rpta"];
-  enun.innerHTML="Pregunta:<br>"+preguntas[x]["preg"];
-  alt[0].innerHTML=preguntas[x]["alt"][0];
-  alt[1].innerHTML=preguntas[x]["alt"][1];
-  alt[2].innerHTML=preguntas[x]["alt"][2];    
+  myrpta=data[x+2]["answer"];
+  enun.innerHTML="Pregunta:<br>"+data[x+2]["question"];
+  alt[0].innerHTML=data[x+2]["alt"][0];
+  alt[1].innerHTML=data[x+2]["alt"][1];
+  alt[2].innerHTML=data[x+2]["alt"][2];    
+  alt[3].innerHTML=data[x+2]["alt"][3];    
+  alt[4].innerHTML=data[x+2]["alt"][4];    
     ++x;  
   
 }

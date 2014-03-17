@@ -23,7 +23,7 @@
     position: absolute;
     top:100px;
     left: 300px;
-    width:200px;
+    width: auto;
     border-radius:5px;
     background-color:#95aa80;
     display: none;
