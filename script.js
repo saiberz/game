@@ -1,52 +1,31 @@
-
 var x=0;  
+var pY=0,pX=0;
 var gogo=1;
-var preguntas = [
-  
-  {
-    "id": "id1",
-    "preg": "2^3",
-    "alt": [
-      "8",
-      "16",
-      "6",
-    ],
-    "rpta":0    
-  },
-  {
-    "id": "id2",
-    "preg": "capital peru",
-    "alt": [
-      "trujillo",
-      "lima",
-      "callao",
-    ],
-    "rpta":1
-  },
-  {
-    "id": "id3",
-    "preg": "el mayor numero",
-    "alt": [
-      "1",
-      "2",
-      "3",
-    ],
-    "rpta":2    
-  },
-  
-];
+
 
 var mapa = {
- "px": [0,150,200,325,400,500,600,700,],
- "py": [0,200,100,300,400,500,600,700,],
+ "px": [150,200,325,400,700,600,300,250,500,50,850],
+ "py": [200,100,300,220,500,180,400,150,620,150,400],
     
 }
 
-var pY=0,pX=0;
+
   
-function inicio(){
+function inicio(){  
+  
   var mybox;
-  mybox=document.getElementsByName("esferas");  
+  var n=mapa["px"].length;
+  if(document.getElementsByName("esferas").length>=n)
+    return 
+  mybox=document.getElementById("esferasbox");
+  for(var i=0; i < n; i++){
+      var itemp = document.createElement("img");
+      itemp.src="images/esfera.jpg"
+      itemp.name="esferas"
+      itemp.id="esferas"
+      mybox.appendChild(itemp);
+  }
+  mybox=document.getElementsByName("esferas");
   for(var x=0; x < mybox.length; x++)
   {
     mybox[x].style.position="absolute";
@@ -69,19 +48,19 @@ function mover() {
   switch(keycode){
   case 37:
     //Left
-    pX-=25;      
+    pX-=20;      
     break; 
   case 38:
     //Arriba    
-    pY-=50;      
+    pY-=20;      
     break;
    case 39:
     //Derecha
-    pX+=25;
+    pX+=20;
     break;
    case 40: 
     //Abajo   
-    pY+=50;    
+    pY+=20;    
     break;
     
   }
@@ -96,7 +75,7 @@ function mover() {
 }
     
 function verificar(){
-  for(cc=0;cc<8;cc++){
+  for(cc=0;cc<mapa["px"].length;cc++){
       if(mapa["px"][cc] == pX && mapa["py"][cc] == pY ){
        gogo=0;
        myf(); 
