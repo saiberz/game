@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kues</title>
+<script         src='https://cdn.firebase.com/js/simple-login/1.3.0/firebase-simple-login.js'> </script>
+</head>
+<body>
+    
+</body>
+
+
+<script type='text/javascript'
+        var chatRef = new Firebase('https://luminous-fire-1725.firebaseio.com/');
+        var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
+        auth.login('facebook');
+        auth.login('facebook', {
+        rememberMe: true,
+        scope: 'email,user_likes'ss
+});
+});
+</script>
+</html>
