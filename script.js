@@ -1,8 +1,9 @@
-var x=0;  
+var iq=0;  
 var pY=0,pX=0;
 var gogo=1;
 var W = screen.availWidth-60;
 var H = screen.availHeight-140;
+var myscore=0;
 
 
 var mapa = {
@@ -18,8 +19,8 @@ function inicio(){
   
   var mybox;
   var n=mapa["px"].length;
-  if(document.getElementsByName("esferas").length>=n)
-    return 
+  /*if(document.getElementsByName("esferas").length>=n)
+    return */
   mybox=document.getElementById("esferasbox");
   for(var i=0; i < n; i++){
       var itemp = document.createElement("img");
@@ -40,7 +41,7 @@ function inicio(){
 
 
   
-window.onkeydown = mover;
+window.onkeydown = mover; // solo funciona en chrome o chromium
 
 function mover() {
   if(gogo){
@@ -69,10 +70,12 @@ function mover() {
     if(pY<H)
     pY+=20;    
     break;
+    default:
+      return;
   }
 
 
-  document.getElementById("personaje").style.top=pY+"px"; 
+document.getElementById("personaje").style.top=pY+"px"; 
 document.getElementById("personaje").style.left=pX+"px";
   
 
@@ -88,44 +91,55 @@ function verificar(){
   for(cc=0;cc<mapa["px"].length;cc++){
       if(mapa["px"][cc] == pX && mapa["py"][cc] == pY ){
        gogo=0;
-       myf(); 
+       showform(); 
       }
   }
 }
     
-function myf(){        
+function showform(){        
   document.getElementById("cuestionario").style.display="block";  
   enun=document.getElementById("enunciado");
   myradio=document.getElementsByName("pregunta");      
   alt=document.getElementsByName("demo");  
-  myrpta=data[x+2]["answer"];
-  enun.innerHTML="Pregunta:<br>"+data[x+2]["question"];
-  alt[0].innerHTML=data[x+2]["alt"][0];
-  alt[1].innerHTML=data[x+2]["alt"][1];
-  alt[2].innerHTML=data[x+2]["alt"][2];    
-  alt[3].innerHTML=data[x+2]["alt"][3];    
-  alt[4].innerHTML=data[x+2]["alt"][4];    
-    ++x;  
+  myrpta=data[iq+2]["answer"];
+  enun.innerHTML="Pregunta:<br>"+data[iq+2]["question"];
+  for (var i=0;i<5;i++)
+  alt[i].innerHTML=data[iq+2]["alt"][i];
+      
+    ++iq;  
   
 }
   
-var myscore=0;
 
 function validar(){  
+    
   if(myradio[myrpta].checked){
     var x;
     x=document.getElementById("score");
     myscore++;    
-    x.value=myscore;           
-    document.body.style.backgroundImage="url('images/backg2.jpg')";
+    if(myscore%2==0){
+      newmap();
+    }
+    x.value=myscore;        
     document.getElementById("cuestionario").style.display="none";  
     gogo=1;
   }
   else
   {
-    alert("lol")
+    alert("sigue intentando")
     gogo=0;
   }
   
   
   }
+
+
+
+var mapnumber=1;
+
+function newmap(){
+  var invar="url('images/backg";
+  invar=invar+mapnumber+".jpg')"
+  document.body.style.backgroundImage=invar;
+  mapnumber++;
+}
