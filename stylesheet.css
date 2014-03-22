@@ -42,11 +42,12 @@ html{
 body {
   
   background-image:url("images/backg.jpg"); 
-  /*background-color: #447659;*/
+  background-size: 1400px 780px;
+  /*background-color: #447659;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover;*/
   
 }
 

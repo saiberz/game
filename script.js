@@ -1,19 +1,20 @@
 var x=0;  
 var pY=0,pX=0;
 var gogo=1;
+var W = screen.availWidth-60;
+var H = screen.availHeight-140;
 
 
 var mapa = {
  "px": [150,200,325,400,700,600,300,260,500,80,840],
- "py": [200,100,300,220,500,180,400,160,620,160,400],
+ "py": [200,100,300,220,400,180,400,160,600,160,400],
     
 }
 
 
   
 function inicio(){  
-  alert(screen.availWidth);
-  alert(screen.availHeight);
+
   
   var mybox;
   var n=mapa["px"].length;
@@ -43,33 +44,39 @@ window.onkeydown = mover;
 
 function mover() {
   if(gogo){
-   
-  document.getElementById("cuestionario").style.display="none";  
-  var keycode;    
-  keycode = window.event.keyCode;  
+    var keycode;    
+    keycode = window.event.keyCode;  
+    document.getElementById("cuestionario").style.display="none";  
+  
   switch(keycode){
   case 37:
     //Left
+    if(pX>0)
     pX-=20;      
     break; 
   case 38:
-    //Arriba    
+    //Arriba
+    if(pY>0)
     pY-=20;      
     break;
    case 39:
     //Derecha
+    if(pX<W)
     pX+=20;
     break;
    case 40: 
-    //Abajo   
+    //Abajo 
+    if(pY<H)
     pY+=20;    
     break;
   }
-    document.getElementById("personaje").style.top=pY+"px";
-    
-    document.getElementById("personaje").style.left=pX+"px";
-    
-    verificar(); 
+
+
+  document.getElementById("personaje").style.top=pY+"px"; 
+document.getElementById("personaje").style.left=pX+"px";
+  
+
+ verificar(); 
     
     
     
