@@ -20,11 +20,11 @@
 }*/
 
 html{
-  background-image:url("images/backg.jpg"); 
-  /* -webkit-background-size: cover;
+/*  background-image:url("images/backg.jpg"); 
+   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;*/
-  background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
   
 }
 
@@ -40,6 +40,13 @@ html{
 }
 
 body {
+  
+  background-image:url("images/backg.jpg"); 
+  /*background-color: #447659;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   
 }
 
