@@ -43,11 +43,12 @@ body {
   
   background-image:url("images/backg.jpg"); 
   background-size: 1400px 780px;
-  /*background-color: #447659;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/
+  transition: width 3s;
+ -webkit-transition: background-image 3s ease-in-out;
+-moz-transition: background-image 3s ease-in-out;
+-ms-transition: background-image 3s ease-in-out;
+-o-transition: background-image 3s ease-in-out;
+transition: background-image 3s ease-in-out;
   
 }
 

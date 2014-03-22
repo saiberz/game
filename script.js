@@ -185,8 +185,12 @@ var mapnumber=1;
 
 function newmap(){
     changepoints(7);
+    if(mapnumber>2){
+      mapnumber=1;
+  }
   var invar="url('images/backg";
   invar=invar+mapnumber+".jpg')"
   document.body.style.backgroundImage=invar;
+  
   mapnumber++;
 }
