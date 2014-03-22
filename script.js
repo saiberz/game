@@ -7,17 +7,52 @@ var myscore=0;
 
 
 var mapa = {
- "px": [150,200,325,400,700,600,300,260,500,80,840],
- "py": [200,100,300,220,400,180,400,160,600,160,400],
+    
+ 
+    
+    
+"px": [],
+"py": [],
     
 }
 
+function addpoints(n){
+   
+    for(i=0; i<n; i++){
+    px= Math.random()
+    px = parseInt(px*W/20)*20
+    
+    py= Math.random()
+    py = parseInt(py*H/20)*20
 
-  
-function inicio(){  
+    mapa["px"].push(px);
+    mapa["py"].push(py);
+    }
+}
 
-  
-  var mybox;
+
+function changepoints(n){
+   
+    for(i=0; i<n; i++){
+    px= Math.random()
+    px = parseInt(px*W/20)*20
+    
+    py= Math.random()
+    py = parseInt(py*H/20)*20
+
+    mapa["px"][i]=px;
+    mapa["py"][i]=py;
+    }
+    inicio();
+}
+
+
+
+function home(){
+
+    addpoints(7);
+    
+    var mybox;
   var n=mapa["px"].length;
   /*if(document.getElementsByName("esferas").length>=n)
     return */
@@ -29,6 +64,17 @@ function inicio(){
       itemp.id="esferas"
       mybox.appendChild(itemp);
   }
+ inicio();
+
+}
+
+function inicio(){  
+
+  var mybox;
+  var n=mapa["px"].length;
+  /*if(document.getElementsByName("esferas").length>=n)
+    return */
+  
   mybox=document.getElementsByName("esferas");
   for(var x=0; x < mybox.length; x++)
   {
@@ -117,7 +163,7 @@ function validar(){
     var x;
     x=document.getElementById("score");
     myscore++;    
-    if(myscore%2==0){
+    if(myscore%1==0){
       newmap();
     }
     x.value=myscore;        
@@ -138,6 +184,7 @@ function validar(){
 var mapnumber=1;
 
 function newmap(){
+    changepoints(7);
   var invar="url('images/backg";
   invar=invar+mapnumber+".jpg')"
   document.body.style.backgroundImage=invar;
