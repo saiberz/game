@@ -58,6 +58,7 @@ transition: background-image 3s ease-in-out;
  position: absolute;
  top:2px;
  width: 30px;  
+  display: none;
 }
 #esferas {
 /*  position: absolute;*/
