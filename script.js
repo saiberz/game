@@ -6,6 +6,9 @@ var H = screen.availHeight-140;
 var myscore=0;
 
 
+
+
+
 var mapa = {
     
  
@@ -14,6 +17,12 @@ var mapa = {
 "px": [],
 "py": [],
     
+}
+
+function mylogin(){
+  
+  
+  
 }
 
 function addpoints(n){
@@ -47,9 +56,24 @@ function changepoints(n){
 }
 
 
+function login(){
+  
+ var chatRef = new Firebase("https://radiant-fire-5378.firebaseio.com");
+
+  
+}
+
+
 
 function home(){
-
+    var personaje= document.getElementById("personaje");
+  personaje.style.display="block";
+  
+  personaje.src="https://graph.facebook.com/"+miusuario.id+"/picture";
+  
+  var loginbox=document.getElementById("loginbox");
+  
+  loginbox.style.display="none";
     addpoints(7);
     
     var mybox;
