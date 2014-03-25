@@ -6,14 +6,29 @@
   <link rel="stylesheet" href="stylesheet.css">
   <script src="script.js"></script>
   <script src="js/data.js" ></script>
+ <script type='text/javascript'
+        src='https://cdn.firebase.com/js/simple-login/1.3.0/firebase-simple-login.js'>
+</script>
 <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script>
 
+<script src="login.js"></script>
+
+
 </head>
- <h1>Bienvenido </h1>
-<body onload="home()">
+
+<body>
+  
+<form id="loginbox">
+    <input type="button" value="Clickme" onclick="home()"> 
+    <br>
+    <input type="text" id="score" value="score">
+</form>
+  
+
+  
   
   <span><img id="personaje" src="images/pers2.png" alt=""> </span>
-  
+
   <div id="esferasbox">
     
   </div>
@@ -36,7 +51,6 @@
     <input type="button" onclick="validar()" value="submit">    
   </form>
   
-  <input type="text" id="score" value="score">
   
 </body>
 </html>
