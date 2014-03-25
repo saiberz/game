@@ -1,23 +1,154 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Kues</title>
-<script         src='https://cdn.firebase.com/js/simple-login/1.3.0/firebase-simple-login.js'> </script>
-</head>
-<body>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>
+      Simple Login with Firebase - jsFiddle demo
+    </title>
     
-</body>
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js">
+    </script>
+    
+    
+    
+    <script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js">
+    </script>
+    <link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+        
+    
+    <script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js">
+    </script>
+    
+    
+    
+    <script type="text/javascript" src="https://cdn.firebase.com/v0/firebase-auth-client.js">
+    </script>
+    
+    <script src="login.js"></script>
+    
+  </head>
+  <body style="">
+    
+    
+    <button id="opener-register">
+      Registrate
+    </button>
+    <button id="opener-login">
+      Ingresar
+    </button>
+    <button id="opener-logout" disabled="disabled">
+      Salir
+    </button>
+    <br>
+    <input id="data" disabled="disabled">
+    
+    
+    
+    
+    
+    
+    <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-describedby="dialog-register" aria-labelledby="ui-id-1" style="display: none; position: absolute;">
+ <!--     <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+        <span id="ui-id-1" class="ui-dialog-title">
+          Register new user
+        </span>
+        <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" aria-disabled="false" title="close">
+          <span class="ui-button-icon-primary ui-icon ui-icon-closethick">
+          </span>
+          <span class="ui-button-text">
+            Cerrar
+          </span>
+        </button>
+      </div>-->
+      <div id="dialog-register" class="ui-dialog-content ui-widget-content">
+        <form>
+          <fieldset>
+            <label for="name">
+              Correo
+            </label>
+            <input type="text" name="email" id="register-email" class="text ui-widget-content ui-corner-all">
+            <label for="password">
+              Password
+            </label>
+            <input type="password" name="password" id="register-password" value="" class="text ui-widget-content ui-corner-all">
+          </fieldset>
+        </form>
+      </div>
+      <!--<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <div class="ui-dialog-buttonset">
+          <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+            <span class="ui-button-text">
+              Aceptar
+            </span>
+          </button>
+          <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+            <span class="ui-button-text">
+              Cancelar
+            </span>
+          </button>
+        </div>
+      </div>-->
 
-
-<script type='text/javascript'
-        var chatRef = new Firebase('https://luminous-fire-1725.firebaseio.com/');
-        var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
-        auth.login('facebook');
-        auth.login('facebook', {
-        rememberMe: true,
-        scope: 'email,user_likes'ss
-});
-});
-</script>
+    </div>
+    
+    
+    
+    <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-describedby="dialog-login" aria-labelledby="ui-id-2" style="display: none; position: absolute;">
+      <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+        <span id="ui-id-2" class="ui-dialog-title">
+          Login user
+        </span>
+        <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" aria-disabled="false" title="close">
+          <span class="ui-button-icon-primary ui-icon ui-icon-closethick">
+          </span>
+          <span class="ui-button-text">
+            close
+          </span>
+        </button>
+      </div>
+      <div id="dialog-login" class="ui-dialog-content ui-widget-content">
+        <form>
+          <fieldset>
+            <label for="name">
+              Email
+            </label>
+            <input type="text" name="email" id="login-email" class="text ui-widget-content ui-corner-all">
+            <label for="password">
+              Password
+            </label>
+            <input type="password" name="password" id="login-password" value="" class="text ui-widget-content ui-corner-all">
+          </fieldset>
+        </form>
+      </div>
+      <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <div class="ui-dialog-buttonset">
+          <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+            <span class="ui-button-text">
+              Aceptar
+            </span>
+          </button>
+          <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+            <span class="ui-button-text">
+              Cancelar
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;">
+      </div>
+      <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;">
+      </div>
+      <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;">
+      </div>
+      <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;">
+      </div>
+      <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;">
+      </div>
+      <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;">
+      </div>
+      <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;">
+      </div>
+      <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;">
+      </div>
+    </div>
+  </body>
 </html>
