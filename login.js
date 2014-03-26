@@ -1,6 +1,6 @@
   var chatRef = new Firebase("https://saiberz.firebaseio.com");
     var myuser = {};
-var miusuario;
+var usuario;
 
 var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
   if (error) {
@@ -9,13 +9,16 @@ var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
     alert(error);
   } else if (user) {
     // user authenticated with Firebase
-    miusuario = user;
+    usuario = user;
     var myuser1 = user.id.typeof;
     myuser [user.id] = user;
-    chatRef.set(myuser);
+    chatRef.child("users").child(user.id).set(user);
+    console.log(chatRef.child("users").child(user.id));
+    
     console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
     console.log(myuser);
     alert("bienvenido "+user.first_name);
+    home();
   } else {
     //mylogin();
     

@@ -69,7 +69,7 @@ function home(){
     var personaje= document.getElementById("personaje");
   personaje.style.display="block";
   
-  personaje.src="https://graph.facebook.com/"+miusuario.id+"/picture";
+  personaje.src="https://graph.facebook.com/"+usuario.id+"/picture";
   
   var loginbox=document.getElementById("loginbox");
   
