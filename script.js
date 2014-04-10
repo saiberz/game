@@ -6,19 +6,11 @@ var H = screen.availHeight-140;
 var myscore=0;
 
 
-
-
-
 var mapa = {   
 "px": [],
 "py": [],
 }
 
-function mylogin(){
-  
-  
-  
-}
 
 function addpoints(n){
    
@@ -51,11 +43,6 @@ function changepoints(n){
 }
 
 
-function login(){
- var chatRef = new Firebase("https://radiant-fire-5378.firebaseio.com");
-}
-
-
 
 function home(){
     var personaje= document.getElementById("personaje");
@@ -80,6 +67,16 @@ function home(){
       itemp.id="esferas"
       mybox.appendChild(itemp);
   }
+    
+// Reading user's data
+    Fire.on('value',function (datareading) {
+        console.log(datareading.val()["users"][usuario.id]["score"]);
+       
+        
+    });
+    
+    
+    
  inicio();
 
 }
@@ -177,7 +174,6 @@ function showform(){
   
 }
   
-
 function validar(){  
     
   if(myradio[myrpta].checked){
