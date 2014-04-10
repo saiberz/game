@@ -9,14 +9,9 @@ var myscore=0;
 
 
 
-var mapa = {
-    
- 
-    
-    
+var mapa = {   
 "px": [],
 "py": [],
-    
 }
 
 function mylogin(){
@@ -57,10 +52,7 @@ function changepoints(n){
 
 
 function login(){
-  
  var chatRef = new Firebase("https://radiant-fire-5378.firebaseio.com");
-
-  
 }
 
 
@@ -167,16 +159,21 @@ function verificar(){
 }
     
 function showform(){        
+  document.body.style.backgroundImage = "url('images/nothing.png')";
+   console.log("cambio!");
   document.getElementById("cuestionario").style.display="block";  
   enun=document.getElementById("enunciado");
   myradio=document.getElementsByName("pregunta");      
   alt=document.getElementsByName("demo");  
-  myrpta=data[iq+2]["answer"];
-  enun.innerHTML="Pregunta:<br>"+data[iq+2]["question"];
+  iq = parseInt (Math.random()*100);    
+  myrpta=data[iq]["answer"];    
+  enun.innerHTML="Pregunta:<br>"+data[iq]["question"];
   for (var i=0;i<5;i++)
-  alt[i].innerHTML=data[iq+2]["alt"][i];
-      
-    ++iq;  
+  alt[i].innerHTML=data[iq]["alt"][i];
+    
+
+  
+    
   
 }
   

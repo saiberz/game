@@ -55,10 +55,14 @@ transition: background-image 3s ease-in-out;
 
 
 #personaje{
- position: absolute;
- top:2px;
- width: 30px;  
-  display: none;
+    position: absolute;
+    top:2px;
+    width: 30px;  
+    display: none;
+    border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	
 }
 #esferas {
 /*  position: absolute;*/
